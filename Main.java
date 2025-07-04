@@ -1,6 +1,6 @@
 // PARTNER NAME:
-// PARTNER NAME:
-// CS111 SECTION #:
+// PARTNER NAME: uziel balverde
+// CS111 SECTION #: 7
 // DATE:
 
 public class Main
@@ -57,7 +57,7 @@ public class Main
 	 * will update total funds and confirm order with user, otherwise error message given
 	 */
 	public static void takeOrder() //TODO: upgrade per documentation
-	{
+{
 		//DECLARATION + INITIALIZATION SECTION
 		int option, numTacosOrdered;
 
@@ -67,9 +67,14 @@ public class Main
 		numTacosOrdered = UtilityBelt.readInt("Enter number of tacos you want> ", 1, 50);
 
 		//CALCULATION + OUTPUT SECTION
-		TacoStand.updateTotalFunds(option, numTacosOrdered);
-		Main.printConfirmation(numTacosOrdered);
+		if (TacoStand.areTacosAvailable(option, numTacosOrdered)){
+			TacoStand.updateTotalFunds(option, numTacosOrdered);
+			Main.printConfirmation(numTacosOrdered);
 	}
+	else{ 
+		System.out.println("We don't have that many tacos, sorry! Try again :(");
+	}
+}
 
 	/**
 	 * Prints confirmation message that varies based on number of tacos in order
@@ -78,7 +83,14 @@ public class Main
 	 */
 	public static void printConfirmation(int numTacos) //TODO: upgrade per documentation
 	{
-		System.out.println("Here you go, buen provecho!");
-		System.out.println("🌮");
+		if (numTacos == 1){
+			System.out.println( "Here you go, Buen provecho!");
+			System.out.println(🌮);
+		} else if (numTacos <= 5){
+			System.out.println("Here you go, buen provecho!");
+			System.out.println(🌮🌮🌮);
+		} else { 
+			System.out.println( " whoa, big order! 🌮 x" + numTacos + " coming right up! ");
+		}
 	}
 }
