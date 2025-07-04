@@ -22,5 +22,6 @@
   },
   "extensions.ignoreRecommendations": true,
   "java.format.settings.url": ".vscode/eclipse-java-google-style.xml",
-  "markdown.preview.doubleClickToSwitchToEditor": false
+  "markdown.preview.doubleClickToSwitchToEditor": false,
+  "java.debug.settings.onBuildFailureProceed": true
 }
